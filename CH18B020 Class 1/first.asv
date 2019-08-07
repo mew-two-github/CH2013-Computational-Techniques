@@ -1,0 +1,11 @@
+a=4.556789;
+b=5.678342;
+sum1=a+b
+difference1=b-a
+product1=b*a %#ok<*NOPTS>
+power1=a^b
+%AC
+sum2=round(1,3,significant)
+2=round(1,3,significant)
+2=round(1,3,significant)
+2=round(1,3,significant)
