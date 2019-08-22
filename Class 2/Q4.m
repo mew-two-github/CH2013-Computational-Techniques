@@ -23,7 +23,7 @@ for i=1:inf
     end
 end
 figure(1)
-plot(Err2)
+semilogx(Err2)
 x=linspace(-10,10)
 y=myfun(x);
 figure(2)
