@@ -18,6 +18,7 @@ funccount=OUTPUT.funcCount;
 rmodel2=func(X,Cdata);
 err2=norm(residual2);
 
+plot(Cdata,rdata,'r+',Cdata,rmodel1,'b-',Cdata,rmodel2,'g-');
 
 function r=func(X,C)
     r=(X(1).*C)./(X(2)+C);
