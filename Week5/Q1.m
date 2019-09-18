@@ -1,0 +1,16 @@
+A=rand(3000);
+b=ones(3000,1);
+tstart=tic;
+
+x1=A\b;
+
+t1=toc(tstart)
+
+
+tstart=tic;
+x2=inv(A);
+t2=toc(tstart)
+
+tstart=tic;
+x3=linsolve(A,b);
+t3=toc(tstart)
