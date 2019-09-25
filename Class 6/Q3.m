@@ -1,0 +1,13 @@
+x=[0    0.4 0.8 1.2 1.6 2.0 2.4];
+y=[0    0.  0.0 1.0 1.8 2.7 2.7];
+x1=0:0.2:2.4;
+y1=interp1(x,y,x1,'spline');
+y2=interp1(x,y,x1,'nearest');
+pp=(spline(x,y));
+y3=ppval(pp,x1);
+diff=y1-y3;
+P=polyfit(x,y,4);
+y4=polyval(P,x1);
+plot(x,y,'+',x1,y1,'-',x1,y2,'-.',x1,y3,':',x1,y4,'--');
+coefs=pp.coefs;
+size(coefs);
