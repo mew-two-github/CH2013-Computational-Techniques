@@ -1,3 +1,4 @@
+     source : https://in.mathworks.com/help/optim/ug/fminsearch-algorithm.html
      Let x(i) denote the list of points in the current simplex, i = 1,...,n+1.
 
     Order the points in the simplex from lowest function value f(x(1)) to highest f(x(n+1)). At each step in the iteration, the algorithm discards the current worst point x(n+1), and accepts another point into the simplex. [Or, in the case of step 7 below, it changes all n points with values above f(x(1))].
