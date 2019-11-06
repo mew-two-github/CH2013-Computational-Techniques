@@ -1,0 +1,56 @@
+x=[0,0.5,1,1.5,2,2.5,3,3.5,4];
+
+yan = func(x);
+
+yEuler1=zeros(1,9);
+yEuler1(1) = 10;
+y=10;
+j=1;
+h=0.5;
+n=0.5/h;
+for i = 1:8
+    j=1;
+    y=yEuler1(i);
+   while j<=n
+       y=euler(x(i)+(j-1)*h,y,h);
+       j=j+1;
+   end
+   yEuler1(i+1)=y;
+end
+
+yEuler2=zeros(1,9);
+yEuler2(1) = 10;
+y=10;
+j=1;
+h=0.1;
+n=0.5/h;
+for i = 1:8
+    j=1;
+    y=yEuler2(i);
+   while j<=n
+       y=euler(x(i)+(j-1)*h,y,h);
+       j=j+1;
+   end
+   yEuler2(i+1)=y;
+end
+
+plot(x,yan,'-',x,yEuler1,'+',x,yEuler2,'x');
+
+[xout,yode45] = ode45(@ODEFUN,x,10);
+
+
+
+function y = func(x)
+    y=-(x.^4)./2+4*x.^3-10*x.^2+8.5*x+10;
+end
+
+
+
+function val = euler(x,y,h)
+    dy=(-2*x^3+12*x^2-20*x+8.5)*h;
+    val=y+dy;
+end
+
+function f=ODEFUN(x,y)
+    f=-(x.^4)./2+4*x.^3-10*x.^2+8.5*x+10;
+end
